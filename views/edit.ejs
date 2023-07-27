@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+	<% users.forEach(function(user){  %>
+	<form method="POST" action="/update/<%= user.book_id %>" autocomplete="off">
+		
+		<div class="form-group">
+			<label><b>book name:</b></label>
+			<input type="text" name="name" class="form-control" value="<%= user.book_name %>">
+			
+		</div><div class="form-group">
+			<label><b>issue date:</b></label>
+			<input type="date" name="date" class="form-control" value="<%= user.issue_date %>">
+			
+		</div>
+		<input type="submit" name="update" value="update" class="btn btn-success">
+	</form>
+	<% }) %>
+
+</div>
+
+</body>
+</html>
